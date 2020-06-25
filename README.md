@@ -2,12 +2,12 @@
 
 |Colum|Type|Options|
 |-----|----|-------|
-|name|text|null: false|
+|name|string|null: false|
 
 ### Association
-- belong_to :groups
-- has_many :messages, through: :groups_users
+- has_many :groups, through: :groups_users
 - has_many :groups_users
+- has_many :messages
 
 ## messagesテーブル
 
@@ -26,9 +26,7 @@
 
 |Colum|Type|Options|
 |-----|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|message_id|integer|null: false, foreign_key: true|
-|name|text|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :user, through: :groups_users
