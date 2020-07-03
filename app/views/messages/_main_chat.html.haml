@@ -1,0 +1,35 @@
+.Chat_main
+  .Group-info
+    .Group-content
+      .Group-content__group-name test
+      .Group-content__member Member
+    .Edit-content
+      .Edit-content__edit-btn
+        = link_to "#" do
+          Edit
+  .Chat_main__message_list
+    .Message-info
+      .Message-info__user-name 
+        ide
+      .Message-info__date 
+        2019/11/20(wed) 17:43:01
+    .Message
+      .Message__contents
+        おはよう
+    .Message-info
+      .Message-info__user-name 
+        ide
+      .Message-info__date 
+        2019/11/20(wed) 17:43:01
+    .Message
+      .Message__contents
+        おはよう
+  .Chat_main__message_form
+    %form.form-box
+      .Text-form
+        %input{type: "text_field", placeholder:"type a message", class:'Text-form__text'}
+        %label{class: "Text-form__label"}
+          = icon('far', 'image', class:'Text-form__label--icon')
+          %input{type: "file", class:'Text-form__label--file'}
+      %input{type: "submit", value:"Send", class:'submit'}
+    
