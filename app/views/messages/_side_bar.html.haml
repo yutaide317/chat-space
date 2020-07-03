@@ -1,0 +1,22 @@
+.Side-bar
+  .User-name
+    .Side-box
+      .Side-box__user-name tec camp
+      .Side-box__icon-set
+        = link_to "#", class: "Side-box__icon-set--btn" do
+          = icon('far', 'edit')
+        = link_to "#", class: "Side-box__icon-set--btn" do
+          = icon('fas', 'cog')
+  .Group-list
+    .Group
+      = link_to "#" do
+        .Group__name 
+          グループ名
+        .Group__message 
+          最新のメッセージ
+    .Group
+      = link_to "#" do
+        .Group__name 
+          グループ名
+        .Group__message 
+          最新のメッセージ
