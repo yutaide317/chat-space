@@ -1,11 +1,12 @@
 .Side-bar
   .User-name
     .Side-box
-      .Side-box__user-name tec camp
+      .Side-box__user-name 
+        = current_user.name
       .Side-box__icon-set
         = link_to "#", class: "Side-box__icon-set--btn" do
           = icon('far', 'edit')
-        = link_to "#", class: "Side-box__icon-set--btn" do
+        = link_to edit_user_path(current_user), class: "Side-box__icon-set--btn" do
           = icon('fas', 'cog')
   .Group-list
     .Group
