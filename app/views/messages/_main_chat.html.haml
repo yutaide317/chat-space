@@ -1,34 +1,23 @@
-.Chat_main
+.Chat_main  
   .Group-info
     .Group-content
-      .Group-content__group-name test
-      .Group-content__member Member
+      .Group-content__group-name 
+        = @group.name
+      .Group-content__member 
+        Member:
+        - @group.group_users.each do |user|
+          = user.user.name
     .Edit-content
       .Edit-content__edit-btn
-        = link_to "#" do
+        = link_to edit_group_path(params[:group_id]) do
           Edit
   .Chat_main__message_list
-    .Message-info
-      .Message-info__user-name 
-        ide
-      .Message-info__date 
-        2019/11/20(wed) 17:43:01
-    .Message
-      .Message__contents
-        おはよう
-    .Message-info
-      .Message-info__user-name 
-        ide
-      .Message-info__date 
-        2019/11/20(wed) 17:43:01
-    .Message
-      .Message__contents
-        おはよう
+    = render @messages
   .Chat_main__message_form
-    %form.form-box
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Text-form
-        %input{type: "text_field", placeholder:"type a message", class:'Text-form__text'}
-        %label{class: "Text-form__label"}
+        = f.text_field :content, placeholder:"type a message", class:'Text-form__text'
+        = f.label :image, class: "Text-form__label" do
           = icon('far', 'image', class:'Text-form__label--icon')
-          %input{type: "file", class:'Text-form__label--file'}
-      %input{type: "submit", value:"Send", class:'submit'}
+          = f.file_field :image, class:'Text-form__label--file'
+      = f.submit 'Send', class:'submit'
