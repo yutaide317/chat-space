@@ -100,7 +100,6 @@
     padding: 35px 0 12px 40px;
     height: calc(100vh - 190px);
     background-color: #fafafa;
-    overflow: scroll;
     .Message-info {
       display: flex;
       &__user-name {
@@ -119,11 +118,7 @@
       margin-bottom: 46px;
       font-size: 14px;
       color: #434A54;
-      &__image {
-        height: 300px;
-      }
     }
-
   }
   .Chat_main__message_form {
     padding: 20px 50px 20px 40px;
